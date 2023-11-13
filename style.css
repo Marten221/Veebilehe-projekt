@@ -13,7 +13,6 @@ section { /* Kui tahad, et teemad paikneksid vasakul, mitte keskel, siis kustuta
     align-items: center;
     justify-content: center;
     text-align: center; /* Keskendab teksti horisontaalselt */
-    list-style-type: disc;
 }
   
 header {
