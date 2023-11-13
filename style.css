@@ -7,6 +7,15 @@ body {
     flex-direction: column;
 }
 
+section { /* Kui tahad, et teemad paikneksid vasakul, mitte keskel, siis kustuta see ära. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Keskendab teksti horisontaalselt */
+    list-style-type: disc;
+}
+  
 header {
     background-color: #f0f0f0;
     padding: 20px;
