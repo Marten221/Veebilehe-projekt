@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Kõrgema Matemaatika Abi</title>
+    <style>
+        /* Add a class for the fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,29 +29,59 @@
         <ul>
             <li><a href="#teema1">Tähistused. Reaalarvud</a></li>
             <li><a href="#teema2">Maatriksid</a></li>
-            <!-- Lisa siia rohkem teemasid vastavalt vajadusele -->
         </ul>
     </nav>
 
-    <section id="teema1">
+    <section id="teema1" class="fade-in"> <!-- Add the fade-in class -->
         <h2>Teema 1: Tähistused. Reaalarvud</h2>
         <p>Arvud moodustavad mingis mõttes matemaatika vundamendi. Erinevat
             tüüpi arvudel võivad olla erinevad omadused ja kasutusvaldkonnad. Enne
             reaalarvudeni jõudmist peame tutvuma veidi lihtsamate arvudega: naturaalarvudega ja täisarvudega.</p>
-        <!-- Lisa siia valemeid, näiteid, ülesandeid ja selgitusi vastavalt vajadusele -->
     </section>
 
-    <section id="teema2">
+    <section id="teema2" class="fade-in"> <!-- Add the fade-in class -->
         <h2>Teema 2: Maatriksid</h2>
         <p>Maatriks on nii matemaatikas kui arvutite maailmas väga oluliseks objektiks, mis tunduvalt lihtsustab informatsiooni salvestamist, ülekandmist ja
             mõningaste süsteemide uurimist.</p>
-        <!-- Lisa siia valemeid, näiteid, ülesandeid ja selgitusi vastavalt vajadusele -->
     </section>
-
-    <!-- Lisa siia rohkem sektsioone vastavalt vajadusele -->
 
     <footer>
         <p>&copy; Marten, Hendrik, Noel</p>
     </footer>
+
+    <script>
+        // Function to check if an element is in the viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Function to add or remove the "is-visible" class based on element visibility
+        function toggleVisibility() {
+            sections.forEach(section => {
+                if (isInViewport(section)) {
+                    section.classList.add('is-visible');
+                } else {
+                    section.classList.remove('is-visible');
+                }
+            });
+        }
+
+        // Get all sections
+        const sections = document.querySelectorAll('.fade-in');
+
+        // Set up the IntersectionObserver to call the toggleVisibility function
+        const observer = new IntersectionObserver(toggleVisibility);
+
+        // Observe each section
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
