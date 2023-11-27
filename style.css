@@ -56,3 +56,26 @@ footer {
     padding: 10px;
     margin-top: auto; /* Uus rida - tõstab footeri lehekülje alla */
 }
+
+/* javacripti jaoks, vaja lisada kirjeldus, kuidas töötab */
+/* Add a class for the fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+    }
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    }
+/* javacripti jaoks, vaja lisada kirjeldus, kuidas töötab */
+
+
+table {
+
+  /* Add 30 pixels gap between "Tähis" and "Definitsioon" columns */
+  th, td {
+    padding-right: 50px;
+  }
+}
