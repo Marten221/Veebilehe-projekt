@@ -58,12 +58,15 @@ footer {
 }
 
 table {
-
-  /* Add 30 pixels gap between "Tähis" and "Definitsioon" columns */
-  th, td {
-    padding-right: 50px;
+    /* Add 30 pixels gap between "Tähis" and "Definitsioon" columns */
+    border-collapse: collapse; /* Optional: To collapse the border spacing */
+  
   }
-}
+  
+  th, td {
+    padding-right: 30px; /* Adjust the value as needed */
+  }
+  
 
 .Maatriksid2\.2 {
     width: 650px;
@@ -107,4 +110,13 @@ table {
 #fadeContainer.fade-in {
     opacity: 1;
     transform: translateY(0);
+}
+
+#tagasiNupp {
+    text-decoration: none;
+    color: white;
+    margin-right: 2000px; /* Lisa soovitud parempoolne vahemik vastavalt kujundusele */
+    background-color: #333; /* Taustavärv */
+    padding: 8px 15px; /* Lisa vajalik padding, et muuta ristküliku suurust */
+    border-radius: 5px; /* Nurkade ümardamine */
 }
